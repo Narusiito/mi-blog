@@ -1,0 +1,29 @@
+{% extends "blog/index.html" %}
+
+{% load static %}
+
+{% block page %}
+
+<h1 class="text-center">Ultimos blogs</h1>
+
+<div class="container mt-3">
+    <div class="text-center">
+        {% for blog in blogs %}
+        <div class="card w-50 m-5">
+            <div class="card-header">
+                <h5 class="card-title">{{ blog.title }}</h5>
+            </div>
+            <div class="card-body">
+                <img class="card-img-middle m-1" src="{{ blog.url }}" alt="Blog Image" height="200">
+                <h6 class="card-subtitle mb-2 text-muted">Publicado por {{ blog.author }}</h6>
+                <a href="/page/{{ blog.id }}">ver mas</a>
+            </div>
+        </div>
+        {% empty %}
+        <h3>Lo sentimos</h3>
+        <h3>No hay blogs disponibles</h3>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "blog/index.html" %}
+
+{% load static %}
+
+{% block page %}
+
+<div class="container">
+    <div class="column w-50">
+        <h4>Iniciar sesion</h4>
+        <form>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="username" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="number" class="form-control" id="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Cargar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
